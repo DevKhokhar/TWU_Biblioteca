@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import junit.framework.Assert;
 import junit.framework.TestCase;
 import org.junit.Test;
 
@@ -11,6 +12,11 @@ import org.junit.Test;
  * To change this template use File | Settings | File Templates.
  */
 public class BookTest extends TestCase {
+    @Test
+    public void testBookConstructor(){
+        Assert.assertNotNull(new Book(4,"TestBook",4));
+    }
+
     @Test
     public void testNonAvailability(){
         Book testbook = new Book(4,"TestBook",4);

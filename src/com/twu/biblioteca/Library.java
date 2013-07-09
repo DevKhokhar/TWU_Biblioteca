@@ -48,7 +48,7 @@ class Library {
     }
 
 
-    private void checkMembershipDetails() {
+    static void checkMembershipDetails() {
         System.out.println("Please talk to the librarian. Thank you!");
     }
 

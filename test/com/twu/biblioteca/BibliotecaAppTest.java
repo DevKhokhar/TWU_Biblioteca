@@ -1,17 +1,37 @@
 package com.twu.biblioteca;
 
-import junit.framework.Assert;
-import junit.framework.TestCase;
 import org.junit.Test;
 
-/**
- * Created with IntelliJ IDEA.
- * User: devangnakhokhar
- * Date: 09/07/13
- * Time: 9:55 AM
- * To change this template use File | Settings | File Templates.
- */
+import java.io.ByteArrayOutputStream;
+
+import static com.twu.biblioteca.TestHelper.captureOutput;
+import static junit.framework.Assert.assertEquals;
+
 public class BibliotecaAppTest {
+    @Test
+    public void welcomeCustomerTest() throws Exception {
+        captureOutput(new CaptureTest() {
+            @Override
+            public void test(ByteArrayOutputStream outContent, ByteArrayOutputStream errContent) throws Exception {
+                BibliotecaApp.welcomeCustomer();
+                String outputString = "Welcome to Biblioteca!!\n";
+                assertEquals(outputString, outContent.toString());
+            }
+        });
+    }
+
+    @Test
+    public void displayMenuTest() throws Exception {
+        captureOutput(new CaptureTest() {
+            @Override
+            public void test(ByteArrayOutputStream outContent, ByteArrayOutputStream errContent) throws Exception {
+                BibliotecaApp.displayMenu();
+                String outputString = "\n\t***********  MENU *************\n" + "\t1. View all the books\n" + "\t2. Reserve a book\n" + "\t3. Check your membership details\n" + "\t4. Exit\n";
+                assertEquals(outputString, outContent.toString());
+            }
+        });
+    }
+
     @Test
     public void negativeNumberAsUserSelection(){
         boolean expectedValue = false;

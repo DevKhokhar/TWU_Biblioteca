@@ -6,12 +6,12 @@ import static java.lang.Thread.sleep;
 
 class BibliotecaApp {
 
-    private static void welcomeCustomer(){
+    static void welcomeCustomer(){
         System.out.println("Welcome to Biblioteca!!");
     }
 
 
-    private static void displayMenu(){
+    static void displayMenu(){
             System.out.println("\n\t***********  MENU *************");
             System.out.println("\t1. View all the books");
             System.out.println("\t2. Reserve a book");
