@@ -4,13 +4,6 @@ import junit.framework.Assert;
 import junit.framework.TestCase;
 import org.junit.Test;
 
-/**
- * Created with IntelliJ IDEA.
- * User: devangnakhokhar
- * Date: 09/07/13
- * Time: 10:09 AM
- * To change this template use File | Settings | File Templates.
- */
 public class BookTest extends TestCase {
     @Test
     public void testBookConstructor(){

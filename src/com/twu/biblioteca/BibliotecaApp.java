@@ -5,6 +5,8 @@ import java.util.Scanner;
 import static java.lang.Thread.sleep;
 
 class BibliotecaApp {
+    static final int no_of_options = 6;
+    static boolean userloggedin = false;
 
     static void welcomeCustomer(){
         System.out.println("Welcome to Biblioteca!!");
@@ -12,15 +14,20 @@ class BibliotecaApp {
 
 
     static void displayMenu(){
-            System.out.println("\n\t***********  MENU *************");
-            System.out.println("\t1. View all the books");
-            System.out.println("\t2. Reserve a book");
-            System.out.println("\t3. Check your membership details");
-            System.out.println("\t4. Exit");
+        System.out.println("\n\t***********  MENU *************");
+        System.out.println("\t1. View all the books");
+        System.out.println("\t2. Reserve a book");
+        System.out.println("\t3. Check your membership details");
+        System.out.println("\t4. View movies");
+        if(userloggedin == false)
+            System.out.println("\t5. Login");
+        else
+            System.out.println("\t5. Logout");
+        System.out.println("\t6. Exit");
     }
 
     static boolean checkOptionValidity(int option){
-        if(option<1 || option>4){
+        if(option<1 || option>no_of_options){
             System.out.println("Invalid Choice! Select a valid one");
             return false;
         }
@@ -45,7 +52,7 @@ class BibliotecaApp {
         }
 
 
-        while(choice!=4){                              // Choice 4 : Exit
+        while(choice!=no_of_options){                              // Choice 5 : Exit
             if(checkOptionValidity(choice))
                 lb.implementChoice(choice);
             try {sleep(1000);} catch (InterruptedException e) { e.printStackTrace(); }
